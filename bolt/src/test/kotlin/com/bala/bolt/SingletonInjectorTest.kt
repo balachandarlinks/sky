@@ -3,7 +3,7 @@ package com.bala.bolt
 import com.bala.bolt.stubs.Bar
 import com.bala.bolt.stubs.Foo
 import com.bala.bolt.stubs.FooInjectedWithSingleton
-import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class SingletonInjectorTest {
@@ -17,7 +17,7 @@ class SingletonInjectorTest {
         val foo = container.inject<Foo>()
         val foo1 = container.inject<Foo>()
 
-        Assertions.assertTrue(foo === foo1)
+        assertTrue(foo === foo1)
     }
 
     @Test
@@ -28,6 +28,6 @@ class SingletonInjectorTest {
         val foo = container.inject<FooInjectedWithSingleton>()
         val foo1 = container.inject<FooInjectedWithSingleton>()
 
-        Assertions.assertTrue(foo.bar === foo1.bar)
+        assertTrue(foo.bar === foo1.bar)
     }
 }
