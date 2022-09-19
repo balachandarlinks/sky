@@ -4,7 +4,7 @@ import com.bala.bolt.errors.CircularDependencyError
 import com.bala.bolt.errors.NoConstructorFoundError
 import com.bala.bolt.stubs.Foo
 import com.bala.bolt.stubs.FooNoInject
-import com.bala.bolt.stubs.FooWithBar
+import com.bala.bolt.stubs.FooBar
 import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
@@ -47,7 +47,7 @@ class TransientInjectorTest {
         val container = bolt.getContainer()
 
         assertThrows<CircularDependencyError> {
-            container.inject<FooWithBar>()
+            container.inject<FooBar>()
         }
     }
 }

@@ -2,6 +2,6 @@ package com.bala.bolt.stubs
 
 import javax.inject.Inject
 
-class FooWithBar @Inject constructor(bar: BarWithFoo)
+class FooBar @Inject constructor(barFoo: BarFoo)
 
-class BarWithFoo @Inject constructor(foo: FooWithBar)
+class BarFoo @Inject constructor(fooBar: FooBar)
